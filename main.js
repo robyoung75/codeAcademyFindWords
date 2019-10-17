@@ -3,3 +3,34 @@ let story = 'Last weekend, I took literally the most beautiful bike ride of my l
 let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+
+//console.log(story); //returns the story
+//console.log(`There are ${story.length} characters in the string`); //returns There are 978 characters in the string.
+
+const storyWords = story.split(" "); //splits the string into individual words.
+//console.log(storyWords); //returns each string as individual words.
+//console.log(`There are ${storyWords.length} words in the string`); //returns There are 188 words in the string.
+
+betterWords = storyWords.filter(word => {
+    return !unnecessaryWords.includes(word)
+}); //filters through storyWords passes all words that are not included in unnecessaryWords to betterWords. Removes uncecessary words from our story.
+//console.log(betterWords);
+
+let reallyCount = 0;
+let veryCount = 0;
+let basicallyCount = 0;
+
+for (word of storyWords) {
+    if (word === 'really') {
+        reallyCount += 1;
+    } else if (word === 'very') {
+        veryCount =+ 1;
+    } else if (word === basicallyCount) {
+        basicallyCount =+ 1;
+    }
+};
+
+console.log(reallyCount);
+console.log(veryCount);
+console.log(basicallyCount);
+
