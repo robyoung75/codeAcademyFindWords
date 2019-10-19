@@ -16,21 +16,54 @@ betterWords = storyWords.filter(word => {
 }); //filters through storyWords passes all words that are not included in unnecessaryWords to betterWords. Removes uncecessary words from our story.
 //console.log(betterWords);
 
+//set variables to count overused words
 let reallyCount = 0;
 let veryCount = 0;
 let basicallyCount = 0;
 
+//example of a for loop
 for (word of storyWords) {
     if (word === 'really') {
         reallyCount += 1;
     } else if (word === 'very') {
-        veryCount =+ 1;
-    } else if (word === basicallyCount) {
-        basicallyCount =+ 1;
+        veryCount += 1;
+    } else if (word === 'basically') {
+        basicallyCount += 1;
     }
 };
+//when I use this function it works but I get an undefined on line 41?
+let overusedLog = (reallyCount, veryCount, basicallyCount) => {
+    console.log(`Really Count = ${reallyCount}`);
+    console.log(`Very Count = ${veryCount}`);
+    console.log(`Basically Count = ${basicallyCount}`);
+};
 
-console.log(reallyCount);
-console.log(veryCount);
-console.log(basicallyCount);
+console.log(overusedLog(reallyCount, veryCount, basicallyCount)); //function returns all overused words.
 
+//console.log(`Really Count = ${reallyCount}`); //returns 2
+//console.log(`Very Count = ${veryCount}`); //returns 5
+//console.log(`Basically Count = ${basicallyCount}`); //returns 1
+
+let sentenceCount = 0;
+//forEach() iterator method example
+storyWords.forEach(sentence => {
+    if (sentence[sentence.length - 1] === '.' || 
+    sentence[sentence.length - 1] === '!') {
+        sentenceCount += 1;
+    }
+});
+
+
+//console.log(`Total number of sentences = ${sentenceCount}`); //returns 12
+
+//when I use the following function I get undefined
+const storyLog = (storyWords, sentenceCount, overusedLog) => {
+    console.log(`There are ${storyWords.length} words in the story.`);
+    console.log(`There are ${sentenceCount} sentences in the story.`);
+    console.log(overusedLog(reallyCount, veryCount, basicallyCount));
+};
+
+//console.log(storyLog(storyWords, sentenceCount, overusedLog))
+
+
+//console.log(betterWords.join(' '));
