@@ -31,14 +31,14 @@ for (word of storyWords) {
         basicallyCount += 1;
     }
 };
-//when I use this function it works but I get an undefined on line 41?
+
 let overusedLog = (reallyCount, veryCount, basicallyCount) => {
-    console.log(`Really Count = ${reallyCount}`);
-    console.log(`Very Count = ${veryCount}`);
-    console.log(`Basically Count = ${basicallyCount}`);
+    console.log(`The word really is used = ${reallyCount} times.`);
+    console.log(`The word very is used = ${veryCount} times.`);
+    console.log(`The word basically is used = ${basicallyCount} times.`);
 };
 
-console.log(overusedLog(reallyCount, veryCount, basicallyCount)); //function returns all overused words.
+//overusedLog(reallyCount, veryCount, basicallyCount); //function returns all overused words. //function returns all overused words.
 
 //console.log(`Really Count = ${reallyCount}`); //returns 2
 //console.log(`Very Count = ${veryCount}`); //returns 5
@@ -56,14 +56,16 @@ storyWords.forEach(sentence => {
 
 //console.log(`Total number of sentences = ${sentenceCount}`); //returns 12
 
-//when I use the following function I get undefined
+
 const storyLog = (storyWords, sentenceCount, overusedLog) => {
     console.log(`There are ${storyWords.length} words in the story.`);
     console.log(`There are ${sentenceCount} sentences in the story.`);
-    console.log(overusedLog(reallyCount, veryCount, basicallyCount));
+    overusedLog(reallyCount, veryCount, basicallyCount);
+    
 };
 
-//console.log(storyLog(storyWords, sentenceCount, overusedLog))
+storyLog(storyWords, sentenceCount, overusedLog);
 
 
-//console.log(betterWords.join(' '));
+console.log(betterWords.join(' '));
+
